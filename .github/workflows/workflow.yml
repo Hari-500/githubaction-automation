@@ -1,6 +1,5 @@
 name: Add File to Bucket
 on: push
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
