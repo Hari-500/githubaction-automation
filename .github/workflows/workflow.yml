@@ -9,10 +9,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Greeting Hello
-       run: echo "Hello Guys"
     - uses: actions/checkout@master
     - name: Upload file to bucket
+      run: echo"Hello"
     - uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete --exclude '.git*/*'
