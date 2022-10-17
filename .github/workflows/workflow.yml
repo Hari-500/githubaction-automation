@@ -1,4 +1,4 @@
-name: Upload Website
+name: linkchecker
 
 on:
   push:
@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - name: Installing linkchecker dependencies
+      run: pip install LinkChecker
+    - name: broken linkchecker
+      run: linkchecker https://infinity.500apps.com/projectsly >linkchecker.txt
+           cat linkchecker.txt
     - uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete --exclude '.git*/*'
